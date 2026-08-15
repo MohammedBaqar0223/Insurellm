@@ -8,13 +8,15 @@ A Retrieval-Augmented Generation (RAG) chatbot that answers questions about Insu
 - 🗂️ Context-aware responses grounded in retrieved documents (employees, contracts, and more)
 ## Tech Stack
 LLM	Google Gemini (gemini-2.5-flash) via langchain_google_genai<br>
-Embeddings	HuggingFace all-MiniLM-L6-v2
-Vector Store	Chroma (langchain_chroma)
-Orchestration	LangChain
-UI	Gradio ChatInterface
-Environment	Python 3.13, python-dotenv
+Embeddings	HuggingFace all-MiniLM-L6-v2<br>
+Vector Store	Chroma (langchain_chroma)<br>
+Orchestration	LangChain<br>
+UI	Gradio ChatInterface<br>
+Environment	Python 3.13, python-dotenv<br>
 ## How it Works
 - A knowledge base of documents (e.g. employee profiles, contracts) is embedded using a HuggingFace sentence-transformer model and stored in a persistent Chroma vector database.
 - When a user asks a question, the retriever fetches the most relevant document chunks from the vector store.
 - The retrieved context is injected into a system prompt, which is sent along with the user's question to the Gemini LLM.
 - The LLM generates a response grounded in the retrieved context, and the answer is displayed in a Gradio chat interface.
+## Vector Database
+Make sure a Chroma vector store (vector.db) has been created and populated with your knowledge base documents before running the app. The knowledge base used in this project includes files such as employee records and contracts under a knowledge-base/ directory.
