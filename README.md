@@ -7,8 +7,7 @@ A Retrieval-Augmented Generation (RAG) chatbot that answers questions about Insu
 - 🖥️ Interactive chat UI built with Gradio
 - 🗂️ Context-aware responses grounded in retrieved documents (employees, contracts, and more)
 ## Tech Stack
-Component	Tool / Library
-LLM	Google Gemini (gemini-2.5-flash) via langchain_google_genai
+LLM	Google Gemini (gemini-2.5-flash) via langchain_google_genai<br>
 Embeddings	HuggingFace all-MiniLM-L6-v2
 Vector Store	Chroma (langchain_chroma)
 Orchestration	LangChain
