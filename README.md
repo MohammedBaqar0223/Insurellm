@@ -6,3 +6,16 @@ A Retrieval-Augmented Generation (RAG) chatbot that answers questions about Insu
 - 💬 LLM-powered answers using Google's Gemini (gemini-2.5-flash) through LangChain
 - 🖥️ Interactive chat UI built with Gradio
 - 🗂️ Context-aware responses grounded in retrieved documents (employees, contracts, and more)
+## Tech Stack
+Component	Tool / Library
+LLM	Google Gemini (gemini-2.5-flash) via langchain_google_genai
+Embeddings	HuggingFace all-MiniLM-L6-v2
+Vector Store	Chroma (langchain_chroma)
+Orchestration	LangChain
+UI	Gradio ChatInterface
+Environment	Python 3.13, python-dotenv
+## How it Works
+- A knowledge base of documents (e.g. employee profiles, contracts) is embedded using a HuggingFace sentence-transformer model and stored in a persistent Chroma vector database.
+- When a user asks a question, the retriever fetches the most relevant document chunks from the vector store.
+- The retrieved context is injected into a system prompt, which is sent along with the user's question to the Gemini LLM.
+- The LLM generates a response grounded in the retrieved context, and the answer is displayed in a Gradio chat interface.
